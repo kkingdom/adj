@@ -3,7 +3,7 @@ from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
-from ad.models import Question,Choice
+from polls.models import Question,Choice
 from django.template import loader
 
 
