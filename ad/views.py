@@ -15,7 +15,7 @@ def index(request):
     }
     return  HttpResponse(template.render(context,request))
 
-def details(request,question_id):
+def detail(request,question_id):
     return HttpResponse("Your question id is %d" % question_id)
 
 def results(request,question_id):
