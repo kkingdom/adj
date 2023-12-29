@@ -1,8 +1,9 @@
 from django.shortcuts import render,get_object_or_404
 # Create your views here.
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 
-from ad.models import Question
+from ad.models import Question,Choice
 from django.template import loader
 
 
@@ -23,4 +24,20 @@ def results(request,question_id):
     return HttpResponse(response % question_id)
 
 def vote(request,question_id):
-    return HttpResponse("You're voting on question id %d" % question_id)
+    question = get_object_or_404(Question,pk=question_id)
+    try:
+        selected_choice = question.choice_set.get(pk=request.POST['choice'])
+    except (KeyError,Choice.DoesNotExist):
+        return render(
+            request,
+            'ad/detail.html',
+        {
+            "question":question,
+            "error_message":"You didn't select a choice"
+        },
+        )
+    else:
+        selected_choice.votes += 1
+        selected_choice.save()
+        return HttpResponseRedirect(reverse('ad:results'),args=(question.id,))
+
