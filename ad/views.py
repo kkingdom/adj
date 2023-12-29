@@ -4,12 +4,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from ad.models import Question
+from django.template import loader
 
 
 def index(request):
     last_question_list = Question.objects.order_by('-pub_date')[:5]
-    output = ', '.join([q.question_text for q in last_question_list])
-    return  HttpResponse(output)
+    template = loader.get_template('ad/index.html')
+    context = {
+        "last_question_list": last_question_list
+    }
+    return  HttpResponse(template.render(context,request))
 
 def details(request,question_id):
     return HttpResponse("Your question id is %d" % question_id)
