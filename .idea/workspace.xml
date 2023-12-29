@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ca237b5a-b8ce-4bf3-90d8-e14e6a17a0a3" name="Changes" comment="ad django files">
+    <list default="true" id="ca237b5a-b8ce-4bf3-90d8-e14e6a17a0a3" name="Changes" comment="setting file change add allowed_hosts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/settings.py" afterDir="false" />
     </list>
@@ -36,6 +36,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "kkingdom"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f45f1fa2-02c2-4512-8c28-1066fc08348a" />
+        <option name="url" value="https://github.com/kkingdom/adj.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -131,7 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1703750517159</updated>
       <workItem from="1703750521771" duration="892000" />
-      <workItem from="1703812990126" duration="1004000" />
+      <workItem from="1703812990126" duration="1675000" />
     </task>
     <task id="LOCAL-00001" summary="ad django files">
       <option name="closed" value="true" />
@@ -141,7 +155,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703813305734</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="setting file change add allowed_hosts">
+      <option name="closed" value="true" />
+      <created>1703814074229</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703814074229</updated>
+    </task>
+    <task id="LOCAL-00003" summary="setting file change add allowed_hosts">
+      <option name="closed" value="true" />
+      <created>1703814303840</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703814303840</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +190,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ad django files" />
-    <option name="LAST_COMMIT_MESSAGE" value="ad django files" />
+    <MESSAGE value="setting file change add allowed_hosts" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting file change add allowed_hosts" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/djangoProject$manage.coverage" NAME="manage Coverage Results" MODIFIED="1703750659471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
