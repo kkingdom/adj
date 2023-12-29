@@ -24,7 +24,7 @@ class ResultsView(generic.DetailView):
     template_name = "/polls/results.html"
 
 
-def index(request, template):
+def index(request):
     last_question_list = Question.objects.order_by('-pub_date')[:5]
     template = loader.get_template('polls/index.html')
     context = {
@@ -34,7 +34,7 @@ def index(request, template):
 
 
 def detail(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
+    question = get_object_or_404(Question, id=question_id)
     return render(request, "polls/detail.html", {"question": question})
 
 
