@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.views import generic
 
 from polls.models import Question, Choice
-from django.template import loader
+
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -24,23 +24,23 @@ class ResultsView(generic.DetailView):
     template_name = "/polls/results.html"
 
 
-def index(request):
-    last_question_list = Question.objects.order_by('-pub_date')[:5]
-    template = loader.get_template('polls/index.html')
-    context = {
-        "last_question_list": last_question_list
-    }
-    return HttpResponse(template.render(context, request))
-
-
-def detail(request, question_id):
-    question = get_object_or_404(Question, id=question_id)
-    return render(request, "polls/detail.html", {"question": question})
-
-
-def results(request, question_id):
-    response = "You're looking at question id %s"
-    return HttpResponse(response % question_id)
+# def index(request):
+#     last_question_list = Question.objects.order_by('-pub_date')[:5]
+#     template = loader.get_template('polls/index.html')
+#     context = {
+#         "last_question_list": last_question_list
+#     }
+#     return HttpResponse(template.render(context, request))
+#
+#
+# def detail(request, question_id):
+#     question = get_object_or_404(Question, pk=question_id)
+#     return render(request, "polls/detail.html", {"question": question})
+#
+#
+# def results(request, question_id):
+#     response = "You're looking at question id %s"
+#     return HttpResponse(response % question_id)
 
 
 def vote(request, question_id):
