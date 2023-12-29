@@ -26,7 +26,7 @@ class ResultsView(generic.DetailView):
 
 def index(request, template):
     last_question_list = Question.objects.order_by('-pub_date')[:5]
-    template = loader.get_template('ad/index.html')
+    template = loader.get_template('polls/index.html')
     context = {
         "last_question_list": last_question_list
     }
@@ -35,7 +35,7 @@ def index(request, template):
 
 def detail(request, question_id):
     question = get_object_or_404(Question, id=question_id)
-    return render(request, "ad/detail.html", {"question": question})
+    return render(request, "polls/detail.html", {"question": question})
 
 
 def results(request, question_id):
@@ -50,7 +50,7 @@ def vote(request, question_id):
     except (KeyError, Choice.DoesNotExist):
         return render(
             request,
-            'ad/detail.html',
+            'polls/detail.html',
             {
                 "question": question,
                 "error_message": "You didn't select a choice"
@@ -59,4 +59,4 @@ def vote(request, question_id):
     else:
         selected_choice.votes += 1
         selected_choice.save()
-        return HttpResponseRedirect(reverse('ad:results'), args=(question.id,))
+        return HttpResponseRedirect(reverse('polls:results'), args=(question.id,))
