@@ -62,7 +62,7 @@ class QuestionViewTests(TestCase):
 class QuestionDetailViewTest(TestCase):
     def test_future_question(self):
         future_question = create_question(question_text='Future question', days=5)
-        url = reverse('polls:detail', kwargs={'pk':future_question.pk})
+        url = reverse('polls:detail', kwargs={'pk':future_question.id})
         response = self.client.get(url)
         self.assertEqual(response.status_code, 404)
 
