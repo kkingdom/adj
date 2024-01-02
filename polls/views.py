@@ -24,7 +24,7 @@ class DetailView(generic.DetailView):
 
     def get_queryset(self):
         """Return the last five published questions."""
-        return Question.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")[:5]
+        return Question.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")
 
 class ResultsView(generic.DetailView):
     model = Question
