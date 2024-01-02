@@ -34,11 +34,23 @@ class QuestionViewTests(TestCase):
             response.context['latest_question_list'], [question]
         )
 
-    def test_future_and_past_question(self):
-        question = create_question(question_text='Future question', days=30),
-        create_question(question_text='Past question', days=-30)
-        response = self.client.get(reverse('polls:index'))
-        self.assertQuerysetEqual(response.context['latest_question_list'], [question])
+    # def test_future_and_past_question(self):
+    #     question = create_question(question_text='Future question', days=30)
+    #     create_question(question_text='Past question', days=-30)
+    #     response = self.client.get(reverse('polls:index'))
+    #     self.assertQuerysetEqual(response.context['latest_question_list'], [question])
+    def test_future_question_and_past_question(self):
+        """
+        Even if both past and future questions exist, only past questions
+        are displayed.
+        """
+        question = create_question(question_text="Past question.", days=-30)
+        create_question(question_text="Future question.", days=30)
+        response = self.client.get(reverse("polls:index"))
+        self.assertQuerySetEqual(
+            response.context["latest_question_list"],
+            [question],
+        )
 
     def test_two_past_questions(self):
         question1 = create_question(question_text='Past question 1.',days=-30)
