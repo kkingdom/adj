@@ -17,7 +17,7 @@ class QuestionViewTests(TestCase):
     def test_no_questions(self):
         response = self.client.get(reverse('polls:index'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, 'No polls available')
+        self.assertContains(response, 'No question to list.')
         self.assertQuerysetEqual(response.context['latest_question_list'], [])
 
     def test_past_question(self):
